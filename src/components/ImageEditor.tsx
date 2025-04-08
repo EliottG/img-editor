@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 export default function ImageEditor() {
-  const [image, setImage] = useState(null);
+  const [image, setImage] = useState<string| null>(null);
 
-  const handleImageUpload = (e) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const handleImageUpload = (e: any) => {
     const file = e.target.files[0];
     if (file) {
       const imageUrl = URL.createObjectURL(file);
