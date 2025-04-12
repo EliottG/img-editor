@@ -47,7 +47,7 @@ const ImageUploader: React.FC<Props> = ({ onImageSelected }) => {
     }
   }}
   className={`flex flex-col items-center justify-center gap-3 w-full max-w-md h-40 px-4 py-6 rounded-xl border-2 border-dashed transition 
-    ${isDragging ? 'bg-blue-100 border-blue-400' : 'bg-white border-gray-300'} cursor-pointer text-gray-600 hover:border-blue-400`}
+    ${isDragging ? 'bg-blue-100 border-blue-400' : ' border-gray-300'} cursor-pointer text-white hover:border-blue-400`}
 >
   <Upload className="w-6 h-6" />
   <span className="font-medium">

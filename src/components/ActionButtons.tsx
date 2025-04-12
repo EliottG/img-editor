@@ -57,7 +57,7 @@ const ActionButtons: React.FC<Props> = ({handleResetCrop, handleReset, croppedIm
                 </button>
                 <button
                   onClick={handleReset}
-                  className="flex gap-4 justify-center px-4 py-2 flex-1 bg-gray-200 text-dark rounded-lg hover:bg-gray-300 transition cursor-pointer"
+                  className="flex gap-4 justify-center px-4 py-2 flex-1 bg-neutral-700 text-dark rounded-lg hover:bg-neutral-800 transition cursor-pointer"
                   >
                   <RotateCcw/>
                   Reset

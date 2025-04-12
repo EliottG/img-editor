@@ -18,7 +18,7 @@ const FilterControls: React.FC<Props> = ({ filters, onChange }) => {
       { name: 'invert', label: 'Invert', max: 100 },
     ].map(({ name, label, max }) => (
       <div key={name} className="w-full">
-        <label className="block mb-2 text-sm font-medium text-gray-700">
+        <label className="block mb-2 text-sm font-medium text-white">
           {label}: {filters[name as keyof typeof filters]}%
         </label>
         <input

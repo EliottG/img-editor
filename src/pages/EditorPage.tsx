@@ -46,74 +46,77 @@ const EditorPage: React.FC = () => {
     }, 100);
   };
 
-
-
   const handleFilterChange = (name: keyof Filters, value: number) => {
     setFilters((prev) => ({ ...prev, [name]: value }));
   };
 
   return (
-<div className="min-h-screen bg-gradient-to-b from-gray-100 via-white to-gray-100  px-4 py-10">
-<div className="max-w-5xl mx-auto space-y-8">
-<div className="bg-white shadow-md rounded-2xl p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-  <div>
-    <h1 className="text-3xl font-bold text-gray-800 mb-1">🖌️ Image Editor</h1>
-    <p className="text-gray-500 text-sm">Edit, crop, and apply filters to your images in seconds.</p>
-  </div>
-  
-    <ImageUploader onImageSelected={handleImageSelected} />
-</div>
+      <div className="min-h-screen bg-gradient-to-b from-gray-100 via-white to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 px-4 py-10 text-gray-800 dark:text-white transition-colors">
+        <div className="max-w-5xl mx-auto space-y-8">
+         
 
-        {selectedImage && isCropping && (
-          <div className="bg-white shadow-md rounded-xl p-6">
-            <h2 ref={cropperRef} className="text-lg font-medium text-gray-700 mb-4">Crop your image</h2>
-            <ImageCropper
-              image={selectedImage}
-              filters={filters}
-              onCropComplete={handleCropComplete}
-            />
-          </div>
-        )}
-
-      {selectedImage && (
-        <div  className="bg-white shadow-md rounded-xl p-6 grid grid-cols-1 lg:grid-cols-2">
-          <div className="space-y-4">
-            <FilterControls filters={filters} onChange={handleFilterChange} />
-            <ActionButtons
-              croppedImage={croppedImage}
-              handleResetCrop={handleResetCrop}
-              selectedImage={selectedImage}
-              filters={filters}
-              handleReset={() => {
-                setFilters(defaultFilter);
-                setCroppedImage(selectedImage);
-              }}
-            />
+          <div className="bg-white dark:bg-gray-800 shadow-md rounded-2xl p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+            <div>
+              <h1 className="text-3xl font-bold mb-1">🖌️ Image Editor</h1>
+              <p className="text-gray-500 dark:text-gray-300 text-sm">
+                Edit, crop, and apply filters to your images in seconds.
+              </p>
+            </div>
+            <ImageUploader onImageSelected={handleImageSelected} />
           </div>
 
-          <div ref={editorRef} className="flex justify-center lg:justify-end mt-4 lg:mt-0">
-  <div className="w-full max-w-md aspect-video border rounded-lg shadow flex items-center justify-center overflow-hidden">
-    <img
-      src={croppedImage || selectedImage}
-      alt="Cropped"
-      style={{
-        filter: `
-          brightness(${filters.brightness}%)
-          contrast(${filters.contrast}%)
-          grayscale(${filters.grayscale}%)
-          saturate(${filters.saturate}%)
-          sepia(${filters.sepia}%)
-          invert(${filters.invert}%)
-        `,
-      }}
-      className="w-full h-full object-contain"
-    />
-  </div>
-</div>
+          {selectedImage && isCropping && (
+            <div className="bg-white dark:bg-gray-800 shadow-md rounded-xl p-6">
+              <h2 ref={cropperRef} className="text-lg font-medium text-gray-700 dark:text-gray-200 mb-4">
+                Crop your image
+              </h2>
+              <ImageCropper
+                image={selectedImage}
+                filters={filters}
+                onCropComplete={handleCropComplete}
+              />
+            </div>
+          )}
+
+          {selectedImage && (
+            <div className="bg-white dark:bg-gray-800 shadow-md rounded-xl p-6 grid grid-cols-1 lg:grid-cols-2">
+              <div className="space-y-4">
+                <FilterControls filters={filters} onChange={handleFilterChange} />
+                <ActionButtons
+                  croppedImage={croppedImage}
+                  handleResetCrop={handleResetCrop}
+                  selectedImage={selectedImage}
+                  filters={filters}
+                  handleReset={() => {
+                    setFilters(defaultFilter);
+                    setCroppedImage(selectedImage);
+                  }}
+                />
+              </div>
+
+              <div ref={editorRef} className="flex justify-center lg:justify-end mt-4 lg:mt-0">
+                <div className="w-full max-w-md aspect-video border rounded-lg shadow flex items-center justify-center overflow-hidden">
+                  <img
+                    src={croppedImage || selectedImage}
+                    alt="Cropped"
+                    style={{
+                      filter: `
+                        brightness(${filters.brightness}%)
+                        contrast(${filters.contrast}%)
+                        grayscale(${filters.grayscale}%)
+                        saturate(${filters.saturate}%)
+                        sepia(${filters.sepia}%)
+                        invert(${filters.invert}%)
+                      `,
+                    }}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              </div>
+            </div>
+          )}
         </div>
-      )}
       </div>
-    </div>
   );
 };
 
