@@ -68,11 +68,11 @@ const ActionButtons: React.FC<Props> = ({handleResetCrop, handleReset, croppedIm
     <select
       value={downloadFormat}
       onChange={(e) => setDownloadFormat(e.target.value as 'jpeg' | 'png' | 'webp')}
-      className="border rounded px-2 py-1"
+      className="border rounded px-4 py-1"
     >
-      <option value="jpeg">JPEG</option>
-      <option value="png">PNG</option>
-      <option value="webp">WEBP</option>
+      <option className='bg-neutral-800' value="jpeg">JPEG</option>
+      <option className='bg-neutral-800' value="png">PNG</option>
+      <option  className='bg-neutral-800' value="webp">WEBP</option>
     </select>
     <button
     onClick={handleDownload}
