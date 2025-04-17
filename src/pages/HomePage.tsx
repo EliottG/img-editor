@@ -56,7 +56,7 @@ const HomePage: React.FC = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="relative  min-h-screen px-4 py-10 flex flex-col items-center text-gray-800 dark:text-white"
+          className="relative  min-h-screen px-4 py-14 flex flex-col items-center text-gray-800 dark:text-white"
         >
           {/* Header */}
           <div className="flex flex-col items-center text-center mb-10">
