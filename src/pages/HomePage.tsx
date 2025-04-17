@@ -36,7 +36,7 @@ const HomePage: React.FC = () => {
   };
 
   return (
-      <div className="relative overflow-hidden dark:bg-gray-900 transition-colors">
+      <div className="relative overflow-hidden bg-gray-900 transition-colors">
         <div className="absolute top-[-100px] right-[-100px] w-[300px] h-[300px] bg-blue-300 rounded-full blur-3xl opacity-50 z-0 pointer-events-none" />
         <div className="absolute bottom-[-120px] left-[-120px] w-[300px] h-[300px] bg-purple-300 rounded-full blur-3xl opacity-40 z-0 pointer-events-none" />
 
