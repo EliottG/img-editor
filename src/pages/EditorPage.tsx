@@ -51,11 +51,11 @@ const EditorPage: React.FC = () => {
   };
 
   return (
-      <div className="min-h-screen bg-gradient-to-b from-gray-100 via-white to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 px-4 py-10 text-gray-800 dark:text-white transition-colors">
+      <div className="min-h-screen bg-gradient-to-b  from-gray-900 via-gray-800 to-gray-900 px-4 py-10 text-white transition-colors">
         <div className="max-w-5xl mx-auto space-y-8">
          
 
-          <div className="bg-white dark:bg-gray-800 shadow-md rounded-2xl p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          <div className="bg-gray-800 shadow-md rounded-2xl p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div>
               <h1 className="text-3xl font-bold mb-1">🖌️ Image Editor</h1>
               <p className="text-gray-500 dark:text-gray-300 text-sm">
@@ -66,8 +66,8 @@ const EditorPage: React.FC = () => {
           </div>
 
           {selectedImage && isCropping && (
-            <div className="bg-white dark:bg-gray-800 shadow-md rounded-xl p-6">
-              <h2 ref={cropperRef} className="text-lg font-medium text-gray-700 dark:text-gray-200 mb-4">
+            <div className="bg-gray-800 shadow-md rounded-xl p-6">
+              <h2 ref={cropperRef} className="text-lg font-medium text-gray-200 mb-4">
                 Crop your image
               </h2>
               <ImageCropper
@@ -79,7 +79,7 @@ const EditorPage: React.FC = () => {
           )}
 
           {selectedImage && (
-            <div className="bg-white dark:bg-gray-800 shadow-md rounded-xl p-6 grid grid-cols-1 lg:grid-cols-2">
+            <div className="bg-gray-800 shadow-md rounded-xl p-6 grid grid-cols-1 lg:grid-cols-2">
               <div className="space-y-4">
                 <FilterControls filters={filters} onChange={handleFilterChange} />
                 <ActionButtons

@@ -36,11 +36,11 @@ const HomePage: React.FC = () => {
   };
 
   return (
-      <div className="relative overflow-hidden bg-white dark:bg-gray-900 transition-colors">
-        <div className="absolute top-[-100px] right-[-100px] w-[300px] h-[300px] bg-blue-100 dark:bg-blue-300 rounded-full blur-3xl opacity-50 z-0 pointer-events-none" />
-        <div className="absolute bottom-[-120px] left-[-120px] w-[300px] h-[300px] bg-purple-100 dark:bg-purple-300 rounded-full blur-3xl opacity-40 z-0 pointer-events-none" />
+      <div className="relative overflow-hidden dark:bg-gray-900 transition-colors">
+        <div className="absolute top-[-100px] right-[-100px] w-[300px] h-[300px] bg-blue-300 rounded-full blur-3xl opacity-50 z-0 pointer-events-none" />
+        <div className="absolute bottom-[-120px] left-[-120px] w-[300px] h-[300px] bg-purple-300 rounded-full blur-3xl opacity-40 z-0 pointer-events-none" />
 
-        <nav className="absolute top-6 left-6 text-sm text-gray-500 dark:text-gray-300 font-medium z-10 flex items-center gap-4">
+        <nav className="absolute top-6 left-6 text-sm text-gray-300 font-medium z-10 flex items-center gap-4">
           <a
             href="https://github.com/EliottG/img-editor"
             target="_blank"
@@ -63,7 +63,7 @@ const HomePage: React.FC = () => {
             <h1 className="text-5xl font-extrabold mb-4 tracking-tight">
               🎨 Welcome to the Image Editor
             </h1>
-            <p className="text-gray-600 dark:text-gray-300 max-w-xl mx-auto text-base sm:text-lg">
+            <p className="text-gray-300 max-w-xl mx-auto text-base sm:text-lg">
               Upload, crop, and apply filters to your images effortlessly. A simple and powerful tool for your creative needs.
             </p>
             <button
@@ -76,7 +76,7 @@ const HomePage: React.FC = () => {
           </div>
 
           {/* Features */}
-          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg px-6 py-10 max-w-4xl w-full mb-12">
+          <div className="bg-gray-800 rounded-2xl shadow-lg px-6 py-10 max-w-4xl w-full mb-12">
             <div className="grid gap-8 sm:grid-cols-3 text-center">
               {features.map((feature, idx) => (
                 <motion.div
@@ -88,11 +88,11 @@ const HomePage: React.FC = () => {
                   whileHover={{ scale: 1.05 }}
                   className="p-4 rounded-xl cursor-default "
                 >
-                  <div className="flex justify-center gap-2 text-blue-600 dark:text-blue-400 items-center text-xl font-semibold mb-1">
+                  <div className="flex justify-center gap-2 text-blue-400 items-center text-xl font-semibold mb-1">
                     {feature.icon}
                     {feature.title}
                   </div>
-                  <p className="text-gray-500 dark:text-gray-400 text-sm">
+                  <p className="text-gray-400 text-sm">
                     {feature.description}
                   </p>
                 </motion.div>
@@ -115,7 +115,7 @@ const HomePage: React.FC = () => {
           </div>
 
           {/* Footer */}
-          <footer className="mt-16 text-sm text-gray-400 dark:text-gray-500 text-center">
+          <footer className="mt-16 text-sm text-gray-500 text-center">
             © {new Date().getFullYear()} Image Editor — Eliott GDC
           </footer>
         </motion.div>
