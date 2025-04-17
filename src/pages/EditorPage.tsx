@@ -58,7 +58,7 @@ const EditorPage: React.FC = () => {
           <div className="bg-gray-800 shadow-md rounded-2xl p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div>
               <h1 className="text-3xl font-bold mb-1">🖌️ Image Editor</h1>
-              <p className="text-gray-500 dark:text-gray-300 text-sm">
+              <p className="text-gray-300 text-sm">
                 Edit, crop, and apply filters to your images in seconds.
               </p>
             </div>
